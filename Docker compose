@@ -1,0 +1,8 @@
+Docker compose is a tool to run multiple container together.
+
+How docker compose works?
+In Yaml file -
+1 - build images of all the services which are part of our application i.e Ui app , backend and database
+2 - Run all the containers.
+3 - port mappings
+4 - Environment variables
