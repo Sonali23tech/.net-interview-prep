@@ -1,0 +1,83 @@
+Docker image
+Docker container
+.net runtime v/s .net sdk
+
+restore - download nuget packages
+build  - builds DLLs for local testing/developer debugging
+publish- produces output which is ready for production deployment
+run - running the published changed.
+
+What is docker file?
+It contains instructions to build and run your app.
+Above commands are the example of what dockerfile contains.
+When we build dockerfile dockerimage is created
+
+Wht is docker image?
+It contains everything needed to run a app.
+.ner runtime 
+configurations
+code
+
+What is docker CLI?
+Docker cli runs docker file and create docker image.
+
+What is docker engine?
+What is docker daemon?
+
+Steps that happen in backend-
+Docker CLI build docker file  and generates docker image and this action is performed by docker engine( docker daemon which is inside 
+docker engine)
+When we run this generated dockerimage , docker container runs.(this is running instance of our application).
+
+
+----------------------------------
+
+What is base image?
+(mcr.microsoft.com/dotnet/aspnet:8.0)
+the run our .net file we need a starting point to build docker image.
+and base image is starting point.
+
+It requireds required environment  to run .net apps.
+eg - linux and runtime
+
+Command to create docker image from CLI
+docker build -t ourfirstdockerapp:v2 .
+command to run created docker image
+docker run -p 8600:8080 ourfirstdockerapp:v2
+
+
+More commands:
+docker -v -> to check version of docker
+docker images 
+docker ps -> it will give all the running containers.
+docker ps -a -> it will give all the containers.
+docker start 
+docker stop
+
+docker rm -> remove the container
+docker rmi -> remove the image
+
+-----------------------------------------
+
+Docker hub
+Cloud registry where we can 
+- upload docker image
+- share docker image with collegues
+- download docker image etc
+
+-------------------------------------------
+Environment variables in docker
+-----------------------------------------
+
+mutli stage builds
+To run any app - there are 2 stages
+  -build and publish app
+  -run app
+
+-build/publish Stage:
+Uses heavy tool(sdk,compiplers) to transform source code into optimal binaries(DLLs)
+
+- Run stage
+Uses a lighweight runtime to execute these binaries(DLLs) in production
+
+
