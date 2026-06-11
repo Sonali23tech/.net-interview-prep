@@ -1,0 +1,21 @@
+Docker container are temporary
+- i.e if container is deleted data within container is also deleted.
+
+We will map a folder inside container - with a folder on local laptop
+ - i.e folder on local laptop becomes persistent storage
+
+Demo steps:
+-Create container
+-Add a file inside container
+-Delete container
+-Create new container
+-Verify file is still available in new container. 
+
+--------------------------------
+Docker named volume
+-v sqldbvolume:/var/opt/mssql
+
+
+Bind Mount v/s named volume
+Bind mount - folder is in our local (if you manually open this folder often use bind mount)
+named vulme - managed by docker itself (app uses volume but i rarely touch it  then use it)
